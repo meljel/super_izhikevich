@@ -49,10 +49,7 @@
 # and late_spiking_cell.py. For these cells, you'll notice the equations are
 # structured differently. You will need to override the super class's
 # simulation method with one unique to that subclass, so that you can
-# customize the equations inside the for loop. The parameter vb can be set
-# to -55 and the variable vd will need to be handled in the same way as the
-# variable v. For more explanation, see the Bonus PDF.
-
+# customize the equations inside the for loop.
 
 import numpy as np
 import matplotlib.pyplot as plt
@@ -68,7 +65,7 @@ class izhCell():
         self.k=0.7
         self.a=0.03
         self.b=-2
-        self.c=-50 # updated, typo in original code
+        self.c=-50
         self.d=100
         self.vpeak=35
         self.stimVal = stimVal
@@ -118,7 +115,7 @@ def plotMyData(somecell, upLim = 1000):
     plt.show()
 
 def createCell():
-    myCell = izhCell(stimVal=200)        
+    myCell = izhCell(stimVal=4000)        
     myCell.simulate()
     plotMyData(myCell)
     
